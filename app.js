@@ -8,32 +8,26 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET
 });
 
+const getHelloMessage = require('./src/getHelloMessage');
+const getCommandAnswer = require('./src/getCommandAnswer');
+
 app.message(/hello/i, async ({ message, say }) => {
-  await say({
-    blocks: [
-      {
-        type: 'section',
-        text: {
-          type: 'mrkdwn',
-          text: `Hey there <@${message.user}>!`
-        },
-        accessory: {
-          type: 'button',
-          text: {
-            type: 'plain_text',
-            text: 'Click Me'
-          },
-          action_id: 'button_click'
-        }
-      }
-    ],
-    text: `Hey there <@${message.user}>!`
-  });
+  const answer = getHelloMessage();
+
+  await say(answer);
 });
 
 app.action('button_click', async ({ body, ack, say }) => {
   await ack();
   await say(`<@${body.user.id}> clicked the button`);
+});
+
+app.command('/my-app', async ({ command, ack, say }) => {
+  await ack();
+
+  const message = getCommandAnswer(command.text);
+
+  await say(message);
 });
 
 (async () => {
