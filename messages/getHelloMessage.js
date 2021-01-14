@@ -1,4 +1,4 @@
-const getHelloMessage = () => ({
+const getHelloMessage = message => ({
   blocks: [
     {
       type: 'section',
