@@ -1,7 +1,7 @@
 const getUnfurlsData = require('../getUnfurlsData');
 
 describe('getUnfurlsData function test', () => {
-  it('should return correct data', () => {
+  test('should return correct data', () => {
     const mockUrl = 'https://test.com';
     const mockApiUrl = 'https://api.test.com';
     const mockData = {

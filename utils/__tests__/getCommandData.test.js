@@ -1,7 +1,7 @@
 const getCommandData = require('../getCommandData');
 
 describe('getCommandData function test', () => {
-  it('should return correct data if the command is empty', () => {
+  test('should return correct data if the command is empty', () => {
     const mockText = '';
 
     const expectedData = {
@@ -17,7 +17,7 @@ describe('getCommandData function test', () => {
     expect(getCommandData(mockText)).toEqual(expectedData);
   });
 
-  it('should return correct data if there is no such command', () => {
+  test('should return correct data if there is no such command', () => {
     const mockText = 'test';
 
     const expectedData = `Sorry... I don't know \`${mockText}\` command. :worried:`;
@@ -25,7 +25,7 @@ describe('getCommandData function test', () => {
     expect(getCommandData(mockText)).toBe(expectedData);
   });
 
-  it('should return correct data if the command is help', () => {
+  test('should return correct data if the command is help', () => {
     const mockText = 'help';
 
     const expectedData = {

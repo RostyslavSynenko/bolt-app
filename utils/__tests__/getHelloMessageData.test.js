@@ -1,7 +1,7 @@
 const getHelloMessageData = require('../getHelloMessageData');
 
 describe('getHelloMessageData function test', () => {
-  it('should return correct data', () => {
+  test('should return correct data', () => {
     const mockUser = 'test.user';
 
     const expectedData = {
