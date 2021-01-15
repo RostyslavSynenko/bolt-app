@@ -1,10 +1,10 @@
-const getHelloMessage = message => ({
+const getHelloMessageData = user => ({
   blocks: [
     {
       type: 'section',
       text: {
         type: 'mrkdwn',
-        text: `Hey there <@${message.user}>!`
+        text: `Hey there <@${user}>!`
       },
       accessory: {
         type: 'button',
@@ -16,7 +16,7 @@ const getHelloMessage = message => ({
       }
     }
   ],
-  text: `Hey there <@${message.user}>!`
+  text: `Hey there <@${user}>!`
 });
 
-module.exports = getHelloMessage;
+module.exports = getHelloMessageData;

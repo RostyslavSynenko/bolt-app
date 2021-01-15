@@ -1,4 +1,4 @@
-const getCommandAnswer = text => {
+const getCommandData = text => {
   let message;
 
   if (!text) {
@@ -68,4 +68,4 @@ const getCommandAnswer = text => {
   return message;
 };
 
-module.exports = getCommandAnswer;
+module.exports = getCommandData;

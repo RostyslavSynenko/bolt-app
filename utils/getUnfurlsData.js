@@ -1,4 +1,4 @@
-const createUnfurls = ({ url, apiUrl, data }) => ({
+const getUnfurlsData = ({ url, apiUrl, data }) => ({
   [url]: {
     blocks: [
       {
@@ -48,4 +48,4 @@ const createUnfurls = ({ url, apiUrl, data }) => ({
   }
 });
 
-module.exports = createUnfurls;
+module.exports = getUnfurlsData;
